@@ -15,9 +15,6 @@ Changes to the original:
   - Security Layer added
 """
 
-
-4. Kosmetisch: OLLAMA_MODEL als Variablenname ist ein Relikt (du nutzt llama-cpp-python, nicht Ollama), der Kommentar "compatibility alias" rettet es halb, aber ein Reviewer stolpert darüber; und im Refusal-Zweig wird filtered_count=full_filter.filtered_count in den Metrics gesetzt, im FilterResult desselben Returns aber filtered_count=0, das ist widersprüchliche Buchführung im selben Objekt (für deine Thesis-Zahlen unkritisch, solange die Evaluation die Metrics liest, aber prüfe das kurz in den Eval-Skripten).
-
 import os
 import time
 import json
