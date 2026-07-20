@@ -1,8 +1,11 @@
-# Adaptiert von Namboothiri et al. (2026), "Authorization-First Retrieval - Enforcing Least Privilege in Multi-Agent RAG Systems"
-# Original: https://github.com/rohithzmoi/afr-eval-artifact/tree/main
-# Anonymous Authors
-# Licensed under the Apache License, Version 2.0
-# See LICENSE file for details
+"""
+Policy Enforcement Point: applies the role policies from policies.py to each
+retrieved chunk and splits them into an authorized and a filtered set. Also
+provides filter statistics for the retrieval inspector.
+
+Taken from Namboothiri et al. (2026),
+licensed under the Apache License, Version 2.0.
+"""
 
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Tuple
