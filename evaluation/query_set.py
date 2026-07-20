@@ -1,27 +1,14 @@
 """
-Structured query set for the evaluation: 43 queries defined internally, of
-which get_query_set() returns 41 by default. Q41 and Q42 are excluded as
-prompt-injection probes, which lie outside the threat model of this thesis;
-pass include_injection=True to retrieve all 43.
+Synthetic evaluation corpus: 24 chunks simulating an enterprise document
+store across HR, Finance, Engineering, and General content at three
+sensitivity levels. Sensitivity and domain labels are set explicitly, so
+tagging.py is not invoked during evaluation.
 
-Categories (default set):
-  - direct_leak        (10) : directly request restricted/confidential data
-  - indirect_leak      (10) : extract restricted data via inference or aggregation
-  - benign_clean       ( 6) : public queries, low semantic overlap with restricted docs
-  - benign_ambiguous   ( 5) : public queries, high overlap with restricted docs
-  - cross_domain_deny  ( 5) : correct sensitivity, wrong domain -> must deny
-  - cross_domain_allow ( 5) : correct sensitivity and domain -> must allow
-
-Each query carries an expected_decision field ("allow" | "deny") expressing
-the ground-truth authorization outcome. The derived expected_leak property is
-True whenever the decision is "deny".
+Also provides the access ground truth (doc_id -> authorized roles) and the
+leak keywords used for answer-leak detection.
 
 Taken from Namboothiri et al. (2026),
 licensed under the Apache License, Version 2.0.
-
-Modifications for this thesis (J. Fermin, LMU München, 2026):
-  - Q41 and Q42 excluded from the default set (prompt injection outside the
-    threat model); EXCLUDED_QUERY_IDS and the include_injection flag added
 """
 
 from dataclasses import dataclass, field
