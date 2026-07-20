@@ -1,3 +1,18 @@
+"""
+Local GGUF inference client via llama-cpp-python. Loads the model once per
+process and provides two entry points: chat() for answer generation and
+chat_json() for the Security Layer.
+
+chat_json() applies a fail-secure default (Saltzer & Schroeder, 1975): if the
+model does not return parseable JSON, the verdict is UNSAFE, since a parse
+error is a system failure rather than a content decision.
+
+Author: J. Fermin, Master's thesis, LMU München, 2026.
+
+Inference is CPU-only (n_gpu_layers=0); the context window is set to 4096
+tokens.
+"""
+
 from llama_cpp import Llama
 import json
 import os
