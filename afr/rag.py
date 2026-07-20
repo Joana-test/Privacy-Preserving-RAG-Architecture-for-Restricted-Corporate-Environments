@@ -1,11 +1,19 @@
-# Adaptiert von Namboothiri et al. (2026), "Authorization-First Retrieval - Enforcing Least Privilege in Multi-Agent RAG Systems"
-# Original: https://github.com/rohithzmoi/afr-eval-artifact/tree/main
-# Changes on the original:
-#    - Vanilla RAG pipeline entfert
-#    - Security Layer added
-# Based on original by Anonymous Authors (Apache License 2.0)
-# Extended by Joana Fermin Guillen – Master Thesis 2026
+"""
+RAG pipeline in two variants: strict_afr_rag() implements Authorization-First
+Retrieval alone, afr_with_security_layer() adds the LLM-based Security Layer
+that reviews the generated answer before it is returned.
 
+Also holds the prompt templates for both the generation step and the Security
+Layer, so that all components use byte-identical prompts.
+
+Author of the Security-Layer integration: J. Fermin, Master's thesis,
+LMU München, 2026. Adapted from Namboothiri et al. (2026),
+licensed under the Apache License, Version 2.0.
+
+Changes to the original:
+  - Vanilla RAG pipeline removed
+  - Security Layer added
+"""
 
 
 4. Kosmetisch: OLLAMA_MODEL als Variablenname ist ein Relikt (du nutzt llama-cpp-python, nicht Ollama), der Kommentar "compatibility alias" rettet es halb, aber ein Reviewer stolpert darüber; und im Refusal-Zweig wird filtered_count=full_filter.filtered_count in den Metrics gesetzt, im FilterResult desselben Returns aber filtered_count=0, das ist widersprüchliche Buchführung im selben Objekt (für deine Thesis-Zahlen unkritisch, solange die Evaluation die Metrics liest, aber prüfe das kurz in den Eval-Skripten).
