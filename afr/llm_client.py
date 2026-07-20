@@ -17,7 +17,10 @@ from llama_cpp import Llama
 import json
 import os
 
-MODEL_PATH = "/home/f/ferminguillen/.cache/huggingface/hub/models--bartowski--Meta-Llama-3.1-8B-Instruct-GGUF/snapshots/bf5b95e96dac0462e2a09145ec66cae9a3f12067/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
+MODEL_PATH = os.environ.get(
+    "AFR_MODEL_PATH",
+    "./models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+)
 
 _llm = None
 
