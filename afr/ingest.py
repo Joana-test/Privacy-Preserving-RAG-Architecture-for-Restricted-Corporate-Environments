@@ -1,8 +1,12 @@
-# Adaptiert von Namboothiri et al. (2026), "Authorization-First Retrieval - Enforcing Least Privilege in Multi-Agent RAG Systems"
-# Original: https://github.com/rohithzmoi/afr-eval-artifact/tree/main
-# Anonymous Authors
-# Licensed under the Apache License, Version 2.0
-# See LICENSE file for details
+"""
+Document ingestion: PDF and CSV extraction, chunking, rule-based tagging via
+tagging.py, and FAISS indexing. Used by the interactive pipeline; the
+evaluation scripts bypass this path and inject the pre-tagged test corpus
+directly.
+
+Taken from Namboothiri et al. (2026),
+licensed under the Apache License, Version 2.0.
+"""
 
 import os
 import csv
