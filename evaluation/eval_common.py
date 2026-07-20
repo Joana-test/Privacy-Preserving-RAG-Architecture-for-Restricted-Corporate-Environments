@@ -1,17 +1,14 @@
 """
-Shared utilities for the AFR / Security-Layer evaluation, used by
-eval_afr_baseline.py and eval_misclassification.py:
-
-  - deterministic misclassification injection (sensitivity downgrades
-    per epsilon and seed)
-  - per-query runners for both pipeline variants (D6, D6_SL)
-  - Security-Layer parse-failure detection
-  - confusion-matrix summary and flat-record export for aggregation
-  - result serialization with run metadata (prompt hash, git commit)
+Shared utilities for the evaluation scripts: deterministic misclassification
+injection, per-query runners for both pipeline variants, Security-Layer
+parse-failure detection, and result serialization with run metadata.
 
 Author: J. Fermin, Master's thesis, LMU München, 2026.
 Uses evaluation infrastructure adapted from Namboothiri et al. (2026),
 licensed under the Apache License, Version 2.0.
+
+Imported by eval_afr_baseline.py and eval_misclassification.py; not run
+directly.
 """
 
 import copy
