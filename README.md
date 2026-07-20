@@ -109,10 +109,6 @@ wurden ausgeschlossen, da Prompt Injection außerhalb des betrachteten
 Bedrohungsmodells liegt; verwendet werden 41 Anfragen.
 
 
-## Lizenz
-
-`[MIT / Apache-2.0 / …]` – siehe `LICENSE`.
-
 ## Kontakt
 
 J. Fermin – `[j.fermin@campus.lmu.de]`
