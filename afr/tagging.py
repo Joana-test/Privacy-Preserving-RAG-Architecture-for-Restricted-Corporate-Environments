@@ -1,8 +1,10 @@
-# Adaptiert von Namboothiri et al. (2026), "Authorization-First Retrieval - Enforcing Least Privilege in Multi-Agent RAG Systems"
-# Original: https://github.com/rohithzmoi/afr-eval-artifact/tree/main
-# Anonymous Authors
-# Licensed under the Apache License, Version 2.0
-# See LICENSE file for details
+"""
+Rule-based classification of chunks by sensitivity, domain, and subject at
+indexing time, plus the ChunkMetadata data class used throughout the system.
+
+Taken from Namboothiri et al. (2026),
+licensed under the Apache License, Version 2.0.
+"""
 
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any
