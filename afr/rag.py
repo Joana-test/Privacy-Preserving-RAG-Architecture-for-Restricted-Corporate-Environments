@@ -15,14 +15,12 @@ Changes to the original:
   - Security Layer added
 """
 
-import os
 import time
-import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import List, Optional
 
 from afr.tagging import ChunkMetadata
-from afr.pep import PolicyEnforcementPoint, FilterResult, filter_chunks
+from afr.pep import PolicyEnforcementPoint, FilterResult
 from afr.ingest import get_ingester
 from afr.llm_client import chat, chat_json
 
