@@ -1,24 +1,15 @@
 """
-Both pipeline variants under injected misclassification.
- 
-Runs BOTH pipelines (D6 = AFR alone, D6_SL = AFR + Security Layer) on the
-same corrupted corpus per (epsilon, seed) combination -- a paired design.
- 
-Note on phase mapping: the d6_results produced here correspond to the
-AFR-only stress condition (Phase 2 of the thesis), while the d6_sl_results
-constitute the combined condition (Phase 3). Running both variants on the
-identical corrupted corpus per (epsilon, seed) eliminates corpus-corruption
-variance from the comparison.
- 
-Author of the phase design and Security-Layer integration: J. Fermin,
-Master's thesis, LMU München, 2026. Uses evaluation infrastructure adapted
-from Namboothiri et al. (2026), licensed under the Apache License,
-Version 2.0.
- 
-Usage:
+Epsilon sweep: runs both pipeline variants on the same corrupted corpus per
+(error rate, seed) combination. Produces the canonical result files from
+which all reported evaluation numbers are derived.
+
+Author: J. Fermin, Master's thesis, LMU München, 2026.
+Uses evaluation infrastructure adapted from Namboothiri et al. (2026),
+licensed under the Apache License, Version 2.0.
+
+Usage (from the project root):
     python -m evaluation.eval_misclassification
-    python -m evaluation.eval_misclassification \\
-        --epsilons 0 0.1 0.2 0.3 0.4 0.5 --seeds 42 123 777
+    python -m evaluation.eval_misclassification --epsilons 0.2 --seeds 42
 
 """
 
