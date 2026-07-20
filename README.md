@@ -1,6 +1,6 @@
 # Sichere Informationsbereitstellung in RAG-Systemen für Unternehmensumgebungen
 
-Begleitcode zur Masterarbeit **„Privacy-Perserving RAG Architecture for restricted Corporate Enviroments"**,
+Begleitcode zur Masterarbeit **„Privacy-Preserving RAG Architecture for restricted Corporate Enviroments"**,
 Ludwig-Maximilians-Universität München, 2026.
 
 Die Arbeit untersucht, wie Retrieval-Augmented-Generation-Systeme (RAG) in
