@@ -35,7 +35,7 @@ Alle Komponenten sind vollständig lokal und CPU-basiert lauffähig
 │   ├── query_set.py              # 41 strukturierte Evaluationsanfragen
 │   ├── eval_common.py            # Gemeinsame Funktionen: Fehlerinjektion, Query-Runner
 │   ├── eval_afr_baseline.py      # Nur AFR, korrekte Labels (Epsilon = 0)
-│   ├── eval_combined_baseline.py # Gepaarter Vergleich AFR vs. AFR+SL auf unkorrumpiertem Korpus
+│   ├── eval_combined_baseline.py # Kombiniertes System (AFR+SL) auf unkorrumpiertem Korpus (wurde während Entwicklung benötigt)
 │   ├── eval_misclassification.py # Epsilon-Sweep: beide Varianten unter injizierten Labelfehlern
 │   ├── model_comparison.py       # Re-Klassifikation gespeicherter Antworten mit anderen SL-Modellen
 │   ├── analysis.py               # Erzeugt alle Tabellen und Grafiken der Evaluation
