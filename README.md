@@ -4,7 +4,7 @@ Begleitcode zur Masterarbeit **„Privacy-Preserving RAG Architecture for restri
 Ludwig-Maximilians-Universität München, 2026.
 
 Die Arbeit untersucht, wie Retrieval-Augmented-Generation-Systeme (RAG) in
-restriktiven Unternehmensumgebungen Information Leakage auch unter
+restriktiven Unternehmensumgebungen Information Leakage, insbesondere unter 
 fehlerhaften Sensitivity-Klassifikationen minimieren können. Dazu kombiniert
 das implementierte System zwei Verteidigungslinien:
 
@@ -67,7 +67,7 @@ separat bezogen werden (z. B. über Hugging Face):
 |---|---|---|
 | Llama 3.1 8B Instruct | Q4_K_M | Generator und Security Layer (Hauptkonfiguration) |
 | Llama 3.1 8B Instruct | Q8_0 | Modellvergleich |
-| Qwen2.5 14B Instruct | [Quantisierung] | Modellvergleich |
+| Qwen2.5 14B Instruct | Q4_K_M | Modellvergleich |
 
 
 ## Experimente reproduzieren
