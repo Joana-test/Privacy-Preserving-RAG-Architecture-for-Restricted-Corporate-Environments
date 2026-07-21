@@ -20,7 +20,7 @@ PHASE3_ROOT = "evaluation/results/misclassification"
 RERUN_FILES = {
     
     "Llama 3.1 8B Q4_K_M": "evaluation/results/model_compare/llamaQ4/Q4.json",
-    "Llama 3.1 8B Q8_0":   "evaluation/results/model_compare/lammaQ8/Q8.json",
+    "Llama 3.1 8B Q8_0":   "evaluation/results/model_compare/llamaQ8/Q8.json",
     "Qwen2.5-14B Q4_K_M":  "evaluation/results/model_compare/Qwen/Qwen14b.json",
 }
 CROSS_DOMAIN_ALLOW = "cross_domain_allow"
