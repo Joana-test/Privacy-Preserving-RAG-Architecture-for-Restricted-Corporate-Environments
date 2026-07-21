@@ -11,11 +11,6 @@
 #   - Added run_d6_sl_pipeline() and Security-Layer fields in PipelineResult
 #   - Updated QueryResult, summary and serialization accordingly
 #
-# Role in the thesis evaluation:
-#   Paired baseline comparison of D6 (AFR only) vs. D6_SL (AFR + Security
-#   Layer) on the CLEAN corpus, i.e. with correct sensitivity labels
-#   (epsilon = 0). No misclassification is injected here. The epsilon sweep
-#   (Phases 2/3 of the thesis) is implemented in eval_misclassification.py.
 #
 # Usage:
 #   python -m evaluation.eval_combined_baseline               # full evaluation
@@ -122,8 +117,7 @@ class QueryResult:
 def inject_corpus(ingester: DocumentIngester, corpus: List[ChunkMetadata]) -> None:
     """Embed the evaluation corpus and build an exact inner-product FAISS
     index directly inside the ingester. IndexFlatIP performs exact search,
-    which is appropriate for the small corpus size (24 chunks); no ANN
-    approximation is involved."""
+    which is appropriate for the small corpus size (24 chunks)."""
     
     print(f"  Injecting {len(corpus)} chunks into ingester...")
     texts      = [c.text for c in corpus]
@@ -445,7 +439,7 @@ def run_evaluation(
 ) -> List[QueryResult]:
     print("=" * 70)
     print(f"AFR Evaluation Runner (k={k})")
-    print(f"Mode: {'DRY RUN (structural only)' if dry_run else 'FULL (with local Phi-3)'}")
+    print(f"Mode: {'DRY RUN (structural only)' if dry_run else 'FULL (with LLM)'}")
     print(f"Comparing: D6 (Baseline: AFR only) vs D6_SL (Extended: AFR + Security Layer)")
     print("=" * 70)
 
@@ -587,8 +581,7 @@ def _print_summary(results: List[QueryResult], dry_run: bool) -> None:
             print(f"{'Avg Security Layer latency (ms)':<40s} {'N/A':>13s} {np.mean(sl_only):>16.0f}")
 
     print(f"\n{'=' * 70}")
-    print("Run `python -m evaluation.aggregate_results` to generate full report.")
-    print(f"{'=' * 70}\n")
+
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
