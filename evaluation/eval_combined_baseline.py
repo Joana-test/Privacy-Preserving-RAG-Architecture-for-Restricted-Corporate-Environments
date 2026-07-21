@@ -35,8 +35,8 @@ if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
 from afr.ingest import DocumentIngester, get_ingester, reset_ingester
-from afr.rag import RAGPipeline, RAGResponse, REFUSAL_MESSAGE
-from afr.pep import PolicyEnforcementPoint, filter_chunks
+from afr.rag import RAGPipeline
+from afr.pep import PolicyEnforcementPoint
 from afr.tagging import ChunkMetadata
 
 from evaluation.test_corpus import get_test_corpus, get_corpus_access_map, get_leak_keywords
