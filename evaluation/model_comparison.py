@@ -97,7 +97,7 @@ def classify_with_sl(llm: Llama, answer: str, role: str,
             if clean.startswith("json"):
                 clean = clean[4:]
         parsed = json.loads(clean.strip())
-        verdict = parsed.get("verdict", "SAFE")
+        verdict = parsed.get("verdict", "UNSAFE")
         violated_rule = parsed.get("violated_rule")
         reason = parsed.get("reason", text)
     except Exception:
