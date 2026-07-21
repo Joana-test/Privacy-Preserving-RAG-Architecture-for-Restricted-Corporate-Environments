@@ -107,7 +107,7 @@ def main():
         confusion = summarize_confusion(pooled_sl_results)
         print(f"    Pooled SL confusion matrix: {confusion}")
         if n_parse_failures:
-            print(f"    NOTE: {n_parse_failures} SL parse failures fell back to SAFE "
+            print(f"    NOTE: {n_parse_failures} SL parse failures fell back to UNSAFE "
                   f"-- see sl_parse_failed field per query.")
 
         save_results(
